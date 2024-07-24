@@ -1,0 +1,35 @@
+{
+  "properties": {
+    "roleName": "Developer Read and Edit Resources Role",
+    "description": "Grants read access to all resources and allows all possible data actions.",
+    "type": "CustomRole",
+    "permissions": [
+      {
+        "actions": [
+          '*/read' 
+        ],
+        "notActions": [],
+        "dataActions": [
+          'Microsoft.Compute/*',
+          'Microsoft.Cdn/*',
+          'Microsoft.Network/*',
+          'Microsoft.Storage/*',
+          'Microsoft.DomainRegistration/*',
+          'Microsoft.CertificateRegistration/*',
+          'Microsoft.ContainerRegistry/*',
+          'Microsoft.ContainerService/*',
+          'Microsoft.Cache/*',
+          'Microsoft.DocumentDB/*',
+          'Microsoft.Sql/*',
+          'Microsoft.Purview/*',
+          'Microsoft.ApiManagement/*'
+        ],
+        "notDataActions": []
+      }
+    ],
+    "assignableScopes": [
+      "/providers/Microsoft.Management/managementGroups/{developmentGroupID}", 
+      "/providers/Microsoft.Management/managementGroups/{testGroupID}"
+    ]
+  }
+}
