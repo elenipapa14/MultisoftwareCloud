@@ -1,0 +1,155 @@
+{
+    "name": "vnet-aks",
+    "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/virtualNetworks/vnet-aks",
+    "etag": "W/\"affe05e5-394a-48a3-a4a2-38bcd34aec19\"",
+    "type": "Microsoft.Network/virtualNetworks",
+    "location": "northeurope",
+    "tags": {
+        "Scope": "Internal",
+        "Environment": "Production"
+    },
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "8b11a17f-bc3c-4821-bd84-050b2ca7b130",
+        "addressSpace": {
+            "addressPrefixes": [
+                "172.16.0.0/20"
+            ]
+        },
+        "subnets": [
+            {
+                "name": "snet-notification-node",
+                "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/virtualNetworks/vnet-aks/subnets/snet-notification-node",
+                "etag": "W/\"affe05e5-394a-48a3-a4a2-38bcd34aec19\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefixes": [
+                        "172.16.0.0/23"
+                    ],
+                    "networkSecurityGroup": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/networkSecurityGroups/notification-nsg"
+                    },
+                    "routeTable": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/HubGroup/providers/Microsoft.Network/routeTables/generalRouteTable"
+                    },
+                    "delegations": [],
+                    "privateEndpointNetworkPolicies": "Disabled",
+                    "privateLinkServiceNetworkPolicies": "Enabled"
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            },
+            {
+                "name": "snet-user-node",
+                "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/virtualNetworks/vnet-aks/subnets/snet-user-node",
+                "etag": "W/\"affe05e5-394a-48a3-a4a2-38bcd34aec19\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefixes": [
+                        "172.16.2.0/23"
+                    ],
+                    "networkSecurityGroup": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/networkSecurityGroups/nsg-user"
+                    },
+                    "routeTable": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/HubGroup/providers/Microsoft.Network/routeTables/generalRouteTable"
+                    },
+                    "delegations": [],
+                    "privateEndpointNetworkPolicies": "Disabled",
+                    "privateLinkServiceNetworkPolicies": "Enabled"
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            },
+            {
+                "name": "snet-database-node",
+                "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/virtualNetworks/vnet-aks/subnets/snet-database-node",
+                "etag": "W/\"affe05e5-394a-48a3-a4a2-38bcd34aec19\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefixes": [
+                        "172.16.4.0/23"
+                    ],
+                    "networkSecurityGroup": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/networkSecurityGroups/nsg-database"
+                    },
+                    "routeTable": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/HubGroup/providers/Microsoft.Network/routeTables/generalRouteTable"
+                    },
+                    "delegations": [],
+                    "privateEndpointNetworkPolicies": "Disabled",
+                    "privateLinkServiceNetworkPolicies": "Enabled"
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            },
+            {
+                "name": "snet-private-endpoints",
+                "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/virtualNetworks/vnet-aks/subnets/snet-private-endpoints",
+                "etag": "W/\"affe05e5-394a-48a3-a4a2-38bcd34aec19\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefixes": [
+                        "172.16.6.0/26"
+                    ],
+                    "networkSecurityGroup": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/networkSecurityGroups/nsg-privendpoints"
+                    },
+                    "routeTable": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/HubGroup/providers/Microsoft.Network/routeTables/generalRouteTable"
+                    },
+                    "ipConfigurations": [
+                        {
+                            "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSGROUP/providers/Microsoft.Network/networkInterfaces/AKSNIC/ipConfigurations/IPV4CONFIG"
+                        }
+                    ],
+                    "delegations": [],
+                    "privateEndpointNetworkPolicies": "Disabled",
+                    "privateLinkServiceNetworkPolicies": "Enabled"
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            },
+            {
+                "name": "snet-payment-node",
+                "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/virtualNetworks/vnet-aks/subnets/snet-payment-node",
+                "etag": "W/\"affe05e5-394a-48a3-a4a2-38bcd34aec19\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefixes": [
+                        "172.16.8.0/22"
+                    ],
+                    "networkSecurityGroup": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/networkSecurityGroups/payments-nsg"
+                    },
+                    "routeTable": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/HubGroup/providers/Microsoft.Network/routeTables/generalRouteTable"
+                    },
+                    "delegations": [],
+                    "privateEndpointNetworkPolicies": "Disabled",
+                    "privateLinkServiceNetworkPolicies": "Enabled"
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            },
+            {
+                "name": "snet-monitoring",
+                "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/virtualNetworks/vnet-aks/subnets/snet-monitoring",
+                "etag": "W/\"affe05e5-394a-48a3-a4a2-38bcd34aec19\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefixes": [
+                        "172.16.7.0/24"
+                    ],
+                    "networkSecurityGroup": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/AKSgroup/providers/Microsoft.Network/networkSecurityGroups/monitoring-nsg"
+                    },
+                    "routeTable": {
+                        "id": "/subscriptions/94dd9db7-046f-419e-a4a1-09431dc40810/resourceGroups/HubGroup/providers/Microsoft.Network/routeTables/generalRouteTable"
+                    },
+                    "delegations": [],
+                    "privateEndpointNetworkPolicies": "Disabled",
+                    "privateLinkServiceNetworkPolicies": "Enabled"
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            }
+        ],
+        "virtualNetworkPeerings": [],
+        "enableDdosProtection": false
+    }
+}
