@@ -4,7 +4,9 @@
 .DESCRIPTION
     This runbook iterates through all VMs with a specific tag in a specified resource group 
     and sets them to auto-shutdown a set number of hours after being turned on.
-    (designed for the development environment VMs)
+    It distinguishes between development and testing VMs and shuts them down
+    after an appropriate amount of time (7 hours for development and 2 for testing VMs, 
+    one hour more than their declared time of use, to allow for flexibility).
 .PARAMETER ResourceGroupName
     The name of the resource group containing the VMs.
 .PARAMETER TagName
@@ -117,3 +119,4 @@ foreach ($vm in $vms) {
 
 
 Write-Output "Auto-shutdown schedule set for all VMs with tag '$TagName' in resource group '$ResourceGroupName'."
+
