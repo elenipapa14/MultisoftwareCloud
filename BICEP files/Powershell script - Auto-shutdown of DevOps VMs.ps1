@@ -119,3 +119,4 @@ foreach ($vm in $vms) {
 
 
 Write-Output "Auto-shutdown schedule set for all VMs with tag '$TagName' in resource group '$ResourceGroupName'."
+
