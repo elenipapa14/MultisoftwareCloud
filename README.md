@@ -10,7 +10,7 @@ This repository includes the following components:
 - **Billing**: Estimated cost of the cloud infrastructure.
 - **JSON Files**: Configuration files that customize the deployed services to meet specific requirements.
 - **Screenshots**: Visual documentation capturing the creation and setup of cloud services.
-- **Presentation**: A [PowerPoint presentation]('Presentation/Presentation_Team1_Thessaloniki.pptx.pdf') summarizing the cloud architecture, deployment steps, and key considerations.
+- **Presentation**: A [PowerPoint presentation](Presentation/Presentation_Team1_Thessaloniki.pptx.pdf) summarizing the cloud architecture, deployment steps, and key considerations.
 
 ## Proposed Architecture Diagram
 
