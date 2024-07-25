@@ -12,4 +12,4 @@ This repository includes the following components:
 
 ## Proposed Architecture Diagram
 
-![Cloud Infrastructure Architecture](Architecture Diagram/Architecture.png  "Architecture")
+![Cloud Infrastructure Architecture](https://github.com/elenipapa14/MultisoftwareCloud/blob/main/Architecture%20Diagram/Architecture.png  "Architecture")
