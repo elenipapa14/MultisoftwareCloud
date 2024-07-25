@@ -29,8 +29,7 @@
       }
     ],
     "assignableScopes": [
-      "/providers/Microsoft.Management/managementGroups/{developmentGroupID}", 
-      "/providers/Microsoft.Management/managementGroups/{testGroupID}"
+      "/"
     ]
   }
 }
