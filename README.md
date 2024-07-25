@@ -11,3 +11,5 @@ This repository includes the following components:
 - **Presentation**: A [PowerPoint presentation]('presentation/CloudArchitecturePresentation.pptx') summarizing the cloud architecture, deployment steps, and key considerations.
 
 ## Proposed Architecture Diagram
+
+![Cloud Infrastructure Architecture](/Architecture Diagram/Architecture.png  "Architecture")
