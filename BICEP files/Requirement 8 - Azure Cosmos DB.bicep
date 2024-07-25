@@ -1,7 +1,10 @@
-param location string = 'northeurope' //Καθορισμένη τοποθεσία
+// Set our defined location of North Europe, for data regulation reasons.
+param location string = 'northeurope'
 param cosmosDbAccountName string = 'multisoftwarecosmosdb'
 param databaseName string = 'multiSoftwareDatabase'
-param throughput int = 400 //μας αρκεί το default 400, ακριβώς θέλουμε 188- Σημειώσεις trello req 7
+// Setting a throughput that will be enough for the database requirements.
+param throughput int = 1000
+// Setting a name for the key vault that will store the database token after it is created.
 param keyVaultName string = 'vault563224'
 
 
@@ -38,7 +41,7 @@ resource cosmosDbAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = {
    Environment: 'Production'
   }
   properties: {
-    databaseAccountOfferType: 'Standard' //Η πιο κοινή επιλογή, χρησιμοποιείται για λογαριασμούς που υποστηρίζουν τη διαχείριση της κλίμακας της αποδοτικότητας μέσω προμήθειας RUs (Request Units).
+    databaseAccountOfferType: 'Standard' 
     locations: [
       {
         locationName: location
@@ -46,7 +49,8 @@ resource cosmosDbAccount 'Microsoft.DocumentDB/databaseAccounts@2023-04-15' = {
       }
     ]
     consistencyPolicy: {
-      defaultConsistencyLevel: 'Session' // balances performance and consistency
+      // Balances performance and consistency
+      defaultConsistencyLevel: 'Session' 
     }
   }
 }
@@ -80,14 +84,18 @@ resource cosmosDbSqlContainer 'Microsoft.DocumentDB/databaseAccounts/sqlDatabase
       id: 'multiSoftwareContainer'
       partitionKey: {
         paths: [
-          '/partitionKey' //Defines the partition key path, which is necessary for distributing data across partitions.
+         // Defines the partition key path, which is necessary for distributing data across partitions.
+          '/partitionKey' 
         ]
         kind: 'Hash'
       }
-      indexingPolicy: { //Ορίζει την πολιτική ευρετηρίασης για τον container.
-        indexingMode: 'consistent' //η ευρετηρίαση θα γίνεται αυτόματα και θα ενημερώνεται κάθε φορά που εισάγονται ή ενημερώνονται δεδομένα.
-                                   // οι άλλες επιλογές είναι lazy οδηγεί σε καθυστερήσεις στην ευρετηρίαση των δεδομένων και none=απεργοποίηση ευρετηρίασης
-        automatic: true //η ευρετηρίαση θα γίνεται αυτόματα χωρίς την ανάγκη για επιπλέον ρυθμίσεις από τον χρήστη.
+      // Handles the indexing policy for the container
+      indexingPolicy: { 
+         // Indexing is automatic and will be updated with the creation or updating of data.
+         // The 'lazy' alternative leads to delays in indexing and 'none' deactivates it.
+        indexingMode: 'consistent'
+        // Indexing is automatic and requires no extra settings set by the user.
+        automatic: true 
       }
     }
     options: {}
